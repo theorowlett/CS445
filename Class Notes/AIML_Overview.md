@@ -16,7 +16,7 @@
 - Goal is to learn a mapping from **inputs** (X) to **labels** (Y)
   - $$ f: X \to Y $$
 - Commonly X denotes the **design matrix**, where X is of dimensions $n*d$.
-- **Regression**: When $y \in \reals$ (**the label is a real-value**)
+- **Regression**: When $y \in \mathbb{R}$ (**the label is a real-value**)
   - Eg. Predict expected income from education level.
   - 
 - **Classification**: When $y \in {1,...,K}$ (**the label is categorical**)
@@ -39,6 +39,8 @@
 - Binary loss: classification
 - Quadratic loss: regression
   - $$ L(f(x),\hat{f(x)}) = (f(x) - \hat{f(x)})^2$$
+  - $$MSE = \frac 1 n \sum_{i=1}^{n} L(y_i,\hat{f(x_i)})^2$$
+  - Having a low training error (MSE) does not guarnatee low test error in general.
 - The closer to 0 for the test set the mo' betta.
 
 ---
@@ -46,3 +48,5 @@
 - Parametric : fixed number of inputs/parameters
   - With an algorithim, we learn to "tune" these parameters.
 - Non-Parametric: Either infinite inputs or a variable number of parameters.
+- Underfitting: Not enough parameters. Results in a model that is insufficiently complex.
+- Overfitting: Too many parameters. Results in an excessively complex model.
